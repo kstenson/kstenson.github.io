@@ -31,7 +31,7 @@ date: 2026-06-08
 Post body…
 ```
 
-## Adding / editing projects
+## Editing the experiment links
 
-The homepage project list is data-driven — edit the `projects:` block in
-`_config.yml`, not the HTML.
+The homepage links directly to the experiment sites — edit the
+`Experiments` section in `index.html`.

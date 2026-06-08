@@ -80,6 +80,11 @@ a:hover { text-decoration: underline; }
 .project-desc { margin: 0.3rem 0 0.5rem; color: var(--muted); font-size: 0.97rem; }
 .project-repo { font-size: 0.85rem; color: var(--muted); }
 
+/* Simple link list */
+.links-list { list-style: none; padding: 0; margin: 0; }
+.links-list li { padding: 0.35rem 0; color: var(--muted); }
+.links-list a { font-weight: 600; }
+
 /* Posts list */
 .posts { list-style: none; padding: 0; margin: 0; }
 .post-item {
