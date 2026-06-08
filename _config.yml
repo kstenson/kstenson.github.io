@@ -1,0 +1,49 @@
+title: Kyle Stenson
+description: >-
+  Home base for things I build — a lot of them with Claude.
+author: Kyle Stenson
+# url becomes https://stenson.dev once the custom domain is attached;
+# until then the site serves at https://kstenson.github.io/
+url: "https://kstenson.github.io"
+baseurl: ""
+
+github_username: kstenson
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# No theme — the site uses its own layouts in _layouts/ and CSS in assets/.
+# (GitHub Pages otherwise defaults to jekyll-theme-primer.)
+theme: null
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# A list of the project sites we link out to. Edit here, not in the HTML.
+# Paths are absolute so they keep working on github.io now and stenson.dev later.
+projects:
+  - name: "The Lab"
+    description: "A collection of ongoing experiments — generative art, a world mood score, a songbird, and more."
+    url: "https://kstenson.github.io/claude-experiments/"
+    repo: "https://github.com/kstenson/claude-experiments"
+  - name: "World Mood Score"
+    description: "A daily dashboard for the mood of the world, built from a broad set of news sources."
+    url: "https://kstenson.github.io/world-mode-score/"
+    repo: "https://github.com/kstenson/world-mode-score"
+  - name: "Song Bird"
+    description: "A daily generative song and lyrics, composed from the tone of the day."
+    url: "https://kstenson.github.io/claude-song-bird/"
+    repo: "https://github.com/kstenson/claude-song-bird"
+  - name: "Groovebox"
+    description: "A browser-based drum machine, synth, step sequencer, mixer & effects. No backend, no installs."
+    url: "https://kstenson.github.io/Groovebox/"
+    repo: "https://github.com/kstenson/Groovebox"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - .gitignore
