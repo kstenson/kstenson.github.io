@@ -1,37 +1,42 @@
 # kstenson.github.io
 
-My personal homepage — a short intro, links to the things I've built, and a
-minimal blog. Served at <https://kstenson.github.io/> (and, once the custom
-domain is attached, <https://stenson.dev/>).
+My personal site — a homepage plus notes published from my Obsidian vault.
+Built with [Quartz v5](https://quartz.jzhao.xyz/) and deployed to GitHub Pages
+via GitHub Actions on every push to `main`.
 
-Built with [Jekyll](https://jekyllrb.com/) and deployed automatically by
-GitHub Pages from the `main` branch — no Action or build step to manage.
+Served at <https://kstenson.github.io/> (and <https://stenson.dev/> once the
+custom domain is attached).
 
-## Local development
+## How publishing works
 
-Ruby is pinned via [mise](https://mise.jdx.dev/) (`mise.toml`).
+Notes authored in a local folder are mirrored into `content/` (folder
+structure preserved), committed, and pushed; GitHub Actions then rebuilds and
+deploys.
+
+Set the source folder once in an untracked `.publish.env` file:
 
 ```sh
-mise install          # installs Ruby 3.3.6
-bundle install        # installs Jekyll + plugins
-bundle exec jekyll serve   # http://localhost:4000
+echo 'VAULT_PUBLISH_DIR=/path/to/your/publish/folder' > .publish.env
 ```
 
-## Adding a blog post
+Then publish with:
 
-Drop a Markdown file in `_posts/` named `YYYY-MM-DD-slug.md` with front matter:
-
-```markdown
----
-layout: post
-title: "Your title"
-date: 2026-06-08
----
-
-Post body…
+```sh
+./publish.sh
 ```
 
-## Editing the experiment links
+The homepage (`content/index.md`) is repo-managed and is **not** overwritten by
+publishing (it's excluded from the sync).
 
-The homepage links directly to the experiment sites — edit the
-`Experiments` section in `index.html`.
+## Local preview
+
+```sh
+npm install
+npx quartz build --serve   # http://localhost:8080
+```
+
+## Notes
+
+- Wikilinks (`[[note]]`), backlinks, graph, and search all work across
+  published notes.
+- Config lives in `quartz.config.yaml`.
