@@ -15,15 +15,7 @@ layout: default
 
 <section class="section">
   <h2>Experiments</h2>
-  <ul class="projects">
-    {% for p in site.projects %}
-    <li class="project">
-      <a class="project-title" href="{{ p.url }}">{{ p.name }}</a>
-      <p class="project-desc">{{ p.description }}</p>
-      <a class="project-repo" href="{{ p.repo }}">source ↗</a>
-    </li>
-    {% endfor %}
-  </ul>
+  <p><a href="{{ '/experiments/' | relative_url }}">Browse the experiments →</a></p>
 </section>
 
 {% if site.posts.size > 0 %}
